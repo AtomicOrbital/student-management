@@ -64,7 +64,7 @@ class ImportData extends Component {
           </Link>
           <button
             type="submit"
-            className="btn btn-primary mg-20"
+            className="btn btn-danger mg-20"
             onClick={this.onFileUpload}
           >
             <span className="fa fa-save"></span> &nbsp; Ghi nhận

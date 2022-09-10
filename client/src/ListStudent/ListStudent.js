@@ -115,7 +115,7 @@ class ListStudent extends Component {
           >
             {sessionStorage.getItem("item")}
           </label>
-          <Link to="/home/list-students/add" className="btn btn-primary">
+          <Link to="/home/list-students/add" className="btn btn-danger">
             <span className="fa fa-plus"></span> &nbsp; Thêm sinh viên
           </Link>{" "}
           &nbsp;
@@ -125,7 +125,7 @@ class ListStudent extends Component {
           &nbsp;
           <Link
             to="/home/list-students/import-data"
-            className="btn btn-primary data"
+            className="btn btn-danger data"
           >
             <span className="fa fa-file-import"></span>&nbsp; Nhập dữ liệu từ
             Excel

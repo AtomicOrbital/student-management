@@ -226,7 +226,7 @@ class Chart extends Component {
         </label>
         <br /> <br />
         <Chart2>
-          <h3 style={{ textAlign: "center" }}>
+          <h3 style={{ color: "#cc0d00", textAlign: "center"}}>
             BIỂU ĐỒ THỐNG KÊ TỔNG GPA SINH VIÊN
           </h3>
           <Center2>
@@ -254,7 +254,7 @@ class Chart extends Component {
           </Center2>
         </Chart2>
         <Chart1>
-          <h3 style={{ textAlign: "center" }}>
+          <h3 style={{ color: "#cc0d00", textAlign: "center" }}>
             BIỂU ĐỒ THỐNG KÊ TRẠNG THÁI SINH VIÊN
           </h3>
           <Center1>
@@ -263,8 +263,8 @@ class Chart extends Component {
               <XAxis dataKey="name" scale="band" />
               <YAxis allowDecimals={false} />
               <Tooltip />
-              <Bar dataKey="Số_SV" barSize={50} fill="#413ea0" />
-              <Line type="monotone" dataKey="Số_SV" stroke="#ff7300" />
+              <Bar dataKey="Số_SV" barSize={50} fill="#cc0d00" />
+              <Line type="monotone" dataKey="Số_SV" stroke="#0c67b3" />
             </ComposedChart>
           </Center1>
         </Chart1>

@@ -23,7 +23,7 @@ const Noti_title = styled.h1`
   font-size: 5rem;
   text-align: center;
   font-weight: bold;
-  color: #0b5592;
+  color: #cc0d00;
 `;
 
 function TodoList(props) {

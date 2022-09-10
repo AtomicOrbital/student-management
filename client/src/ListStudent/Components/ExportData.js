@@ -18,7 +18,7 @@ const ExportToExcel = ({ apiData, fileName }) => {
 
   return (
     <button
-      className="btn btn-primary"
+      className="btn btn-danger"
       onClick={(e) => exportToCSV(apiData, fileName)}
     >
       <span className="fa fa-file-export"> &nbsp;</span>Xuất file Excel

@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 import { FaUser } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-import Logo from "./uet.png";
+// import Logo from "./uet.png";
 import AppLogo from "./applogo_1.png";
 
 const Body = styled.div`
@@ -16,7 +16,9 @@ const Body = styled.div`
 `;
 const Container = styled.div`
   width: 100%;
-  display: flex;
+  padding-right: 15px;
+  padding-left: 110px;
+  
 `;
 const _Input = styled.input`
   border: 0;
@@ -29,7 +31,7 @@ const _Button = styled.button`
   width: 260px;
   margin-left: 70px;
   height: 40px;
-  background-color: #2573b3;
+  background-color: #cc0d00;
   color: white;
   border: none;
   border-radius: 10px;
@@ -46,14 +48,14 @@ const Icon = styled.i`
   border-bottom: 2px solid #09599b;
   margin-left: 18%;
   // margin-right: 5px;
-  color: #2573b3;
+  color: #cc0d00;
 `;
 const Title = styled.p`
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 600;
   font-size: 3rem;
-  color: #2573b3;
+  color: #cc0d00;
   padding: 20px 0px 20px 0px;
 `;
 
@@ -200,18 +202,18 @@ class Login extends Component {
     } else {
       return (
         <Body>
-          <Line1></Line1>
-          <Line2></Line2>
+          {/* <Line1></Line1>
+          <Line2></Line2> */}
           <Container>
-            <App_logo_container>
+            {/* <App_logo_container>
               <App_logo src={AppLogo} />
               <Comment>Hệ thống hỗ trợ quản lý sinh viên Classe369</Comment>
               <Comment1>Xây dựng và phát triển bởi N3-INT3306_22</Comment1>
               <Comment2>Trường Đại học Công nghệ - ĐHQGHN</Comment2>
-            </App_logo_container>
+            </App_logo_container> */}
             <Form_container>
               <Form action="" method="post" onSubmit={this.submit}>
-                <Uet_logo src={Logo} />
+                <Uet_logo src={`https://slink.ptit.edu.vn/logo.png`} />
                 <Title>ĐĂNG NHẬP</Title>
                 <Input_container>
                   <Icon>

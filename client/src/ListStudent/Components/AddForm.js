@@ -198,7 +198,7 @@ class AddForm extends Component {
                   <div className="text_center">
                     <button
                       type="submit"
-                      className="button submit btn btn-primary"
+                      className="button submit btn btn-danger"
                       onClick={this.onSubmit}
                     >
                       <span className="fa fa-plus"></span> &nbsp;Lưu lại
@@ -206,7 +206,7 @@ class AddForm extends Component {
                     &nbsp;
                     <Link
                       to="/home/list-students"
-                      className="button cancle btn btn-primary"
+                      className="button cancle btn btn-danger"
                     >
                       <span className="fa fa-close"></span> &nbsp;Hủy bỏ
                     </Link>

@@ -162,7 +162,7 @@ class NavBar extends Component {
           <div className={openNav ? "sidebar open" : "sidebar"}>
             <div className="logo-details">
               {/* cai 3 gach */}
-              <div className="logo_name">MENU</div>
+              <div style={{paddingLeft: "50px"}} className="logo_name">MENU</div>
               <div id="btn" onClick={this.open}>
                 <box-icon name="menu" color="#ffffff"></box-icon>
               </div>
