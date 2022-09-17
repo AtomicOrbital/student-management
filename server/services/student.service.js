@@ -1,5 +1,6 @@
 import Student from "../models/student.model.js";
 import Users from "../models/user.model.js";
+import Class from "../models/class.model.js";
 import xlsx from "xlsx";
 import argon2 from "argon2";
 import jwt from "jsonwebtoken";
@@ -77,6 +78,41 @@ export default {
       console.log("Create successfully");
     } catch (error) {
       res.status(500).json({ message: "Server error ~ createStudent" });
+    }
+  },
+
+  createClass: async (req, res) => {
+    try {
+      const {
+        name,
+      } = req.body;
+
+      const isExist = await Class.findOne({ name });
+      if (isExist) {
+        return res
+          .status(400)
+          .json({ success: false, message: "Class already exist!" });
+      }
+
+      const newClass = new Class({
+        name,
+      });
+      await newClass.save();
+      console.log("Create successfully");
+    } catch (error) {
+      res.status(500).json({ message: "Server error ~ createClass" });
+    }
+  },
+
+  getClass: async (req, res) => {
+    try {
+      const resClass = await Class.find();
+
+      res.json({ success: true, resClass });
+    } catch (error) {
+      res
+        .status(500)
+        .json({ success: false, message: "Server error ~ getClass" });
     }
   },
 

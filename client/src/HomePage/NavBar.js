@@ -113,15 +113,6 @@ class NavBar extends Component {
   };
 
   chooseLogout = () => {
-    // this.setState({
-    //   chooseHome: false,
-    //   chooseNoti: false,
-    //   chooseChat: false,
-    //   chooseList: false,
-    //   chooseChart: false,
-    //   chooseInfoTeacher: false,
-    //   chooseProfile: false,
-    // });
     localStorage.removeItem("accessToken");
     sessionStorage.removeItem("msv");
     sessionStorage.removeItem("userId");
@@ -214,33 +205,6 @@ class NavBar extends Component {
                 </Link>
                 <span className="tooltip">Biểu đồ điểm</span>
               </li>
-              <li
-                className={chooseNoti ? "home" : ""}
-                onClick={this.chooseNoti}
-              >
-                <Link to="/home/notification">
-                  {/* thong bao */}
-                  <div className="icon">
-                    <IoMdNotificationsOutline />
-                  </div>
-                  <span className="links_name">Thông Báo</span>
-                </Link>
-                <span className="tooltip">Thông Báo</span>
-              </li>
-              <li
-                className={chooseChat ? "home" : ""}
-                onClick={this.chooseChat}
-              >
-                <Link to="/home/chat">
-                  <div className="icon">
-                    <span className="fa fa-comment-dots"></span>
-                  </div>
-                  <span className="links_name">Chat</span>
-
-                  <span className="tooltip">Chat</span>
-                </Link>
-              </li>
-
               <li
                 className="profile"
                 className={

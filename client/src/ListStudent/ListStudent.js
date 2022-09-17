@@ -12,14 +12,18 @@ class ListStudent extends Component {
     this.state = {
       students: [],
       lop: [],
+      resClass: [],
       item: sessionStorage.getItem("item"),
     };
   }
 
   componentDidMount() {
-    this.setState({
-      lop: sessionStorage.getItem("lop").split(", "),
-    });
+    // console.log(sessionStorage.getItem("lop"));
+    // if(sessionStorage.getItem("lop")) {
+    //   this.setState({
+    //     lop: sessionStorage.getItem("lop").split(", "),
+    //   });
+    // }
     var item = sessionStorage.getItem("item");
     CallApi(`student/all/${item}`, "GET", null).then((res) => {
       if (res.data.ListStudents != null) {
@@ -29,6 +33,17 @@ class ListStudent extends Component {
       } else {
         this.setState({
           students: [],
+        });
+      }
+    });
+    CallApi(`student/class`, "GET", null).then((res) => {
+      if (res.data.resClass != null) {
+        this.setState({
+          resClass: res.data.resClass,
+        });
+      } else {
+        this.setState({
+          resClass: [],
         });
       }
     });
@@ -75,7 +90,7 @@ class ListStudent extends Component {
   };
 
   render() {
-    var { lop, students } = this.state;
+    var { resClass, students } = this.state;
     return (
       <div className="Container">
         <div className="text_center">
@@ -95,13 +110,13 @@ class ListStudent extends Component {
               Lớp &nbsp; <span className="fa fa-caret-square-o-down"></span>
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-              {lop.map((item) => (
+              {resClass.map((item) => (
                 <li
                   to="/home/list-students"
                   key={item}
-                  onClick={() => this.ChooseClass(item)}
+                  // onClick={() => this.ChooseClass(item)}
                 >
-                  <a role="button">{item}</a>
+                  <a role="button">{item.name}</a>
                 </li>
               ))}
             </ul>
@@ -115,9 +130,12 @@ class ListStudent extends Component {
           >
             {sessionStorage.getItem("item")}
           </label>
-          <Link to="/home/list-students/add" className="btn btn-danger">
+          <Link to="/home/list-students/add" className="btn btn-danger add-student">
             <span className="fa fa-plus"></span> &nbsp; Thêm sinh viên
-          </Link>{" "}
+          </Link>
+          <Link to="/home/list-students/add-class" className="btn btn-danger add-class">
+            <span className="fa fa-plus"></span> &nbsp; Thêm lớp
+          </Link>
           &nbsp;
           <div className="data">
             <ExportToExcel apiData={students} fileName={this.state.item} />

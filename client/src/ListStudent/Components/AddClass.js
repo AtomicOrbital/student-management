@@ -2,20 +2,11 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import CallApi from "../../API/CallApi";
 import axios from "axios";
-class AddForm extends Component {
+class AddClass extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      msv: "",
-      name: "",
-      birthday: "",
-      gender: "",
-      phone: "",
-      address: "",
-      sum_of_credits: 0,
-      gpa: 0,
-      status: "",
-      lop: "",
+      name: ""
     };
   }
 
@@ -30,23 +21,23 @@ class AddForm extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    CallApi("student/create", "POST", {
-      msv: this.state.msv,
+    CallApi("student/create-class", "POST", {
+    //   msv: this.state.msv,
       name: this.state.name,
-      birthday: this.state.birthday,
-      gender: this.state.gender,
-      phone: this.state.phone,
-      address: this.state.address,
-      sum_of_credits: this.state.sum_of_credits,
-      gpa: this.state.gpa,
-      status: this.state.status,
-      lop: this.state.lop,
+    //   birthday: this.state.birthday,
+    //   gender: this.state.gender,
+    //   phone: this.state.phone,
+    //   address: this.state.address,
+    //   sum_of_credits: this.state.sum_of_credits,
+    //   gpa: this.state.gpa,
+    //   status: this.state.status,
+    //   lop: this.state.lop,
     });
-    CallApi("create-student-account", "POST", {
-      username: this.state.msv,
-      password: this.state.msv,
-      lop: this.state.lop,
-    });
+    // CallApi("create-student-account", "POST", {
+    //   username: this.state.msv,
+    //   password: this.state.msv,
+    //   lop: this.state.lop,
+    // });
 
     // const headers = {
     //   "PRIVATE-KEY": "14bf1d3f-a86c-4b1b-ad74-9675722ee4f8",
@@ -64,16 +55,16 @@ class AddForm extends Component {
     // );
 
     this.setState({
-      msv: "",
+    //   msv: "",
       name: "",
-      birthday: "",
-      gender: "",
-      phone: "",
-      address: "",
-      sum_of_credits: "",
-      gpa: "",
-      status: "",
-      lop: "",
+    //   birthday: "",
+    //   gender: "",
+    //   phone: "",
+    //   address: "",
+    //   sum_of_credits: "",
+    //   gpa: "",
+    //   status: "",
+    //   lop: "",
     });
     alert("Đã thêm thành công");
   };
@@ -89,12 +80,12 @@ class AddForm extends Component {
         <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 center">
           <div className="panel panel-warning">
             <div className="panel-heading">
-              <h3 className="panel-title">Thêm sinh viên</h3>
+              <h3 className="panel-title">Thêm Class</h3>
             </div>
             <div className="panel-body">
               <form onSubmit={this.onSubmit}>
                 <div className="form-group">
-                  <label>MSV: </label>
+                  {/* <label>MSV: </label>
                   <input
                     type="text"
                     className="form-control"
@@ -102,8 +93,8 @@ class AddForm extends Component {
                     name="msv"
                     value={this.state.msv}
                     onChange={this.onChange}
-                  />
-                  <label>Họ và tên: </label>
+                  /> */}
+                  <label>Tên Lớp: </label>
                   <input
                     type="text"
                     className="form-control"
@@ -112,7 +103,7 @@ class AddForm extends Component {
                     value={this.state.name}
                     onChange={this.onChange}
                   />
-                  <label>Ngày sinh: </label>
+                  {/* <label>Ngày sinh: </label>
                   <input
                     type="date"
                     className="form-control"
@@ -193,7 +184,7 @@ class AddForm extends Component {
                     name="lop"
                     value={this.state.lop}
                     onChange={this.onChange}
-                  />
+                  /> */}
                   <br />
                   <div className="text_center">
                     <button
@@ -221,4 +212,4 @@ class AddForm extends Component {
   }
 }
 
-export default AddForm;
+export default AddClass;

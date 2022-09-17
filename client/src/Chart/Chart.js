@@ -53,9 +53,11 @@ class Chart extends Component {
     };
   }
   componentDidMount() {
-    this.setState({
-      lop: sessionStorage.getItem("lop").split(", "),
-    });
+    if(sessionStorage.getItem("lop")) {
+      this.setState({
+        lop: sessionStorage.getItem("lop").split(", "),
+      });
+    }
     var item = sessionStorage.getItem("item");
 
     CallApi(`student/all/${item}`, "GET", null).then((res) => {
