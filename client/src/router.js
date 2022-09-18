@@ -9,6 +9,7 @@ import InfoStudent from "./ListStudent/Components/InfoStudent";
 import ImportData from "./ListStudent/Components/ImportData";
 import Profile from "./Profile/Profile";
 import ChangePassword from "./Profile/ChangePassword";
+import AddClass from "./ListStudent/Components/AddClass";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: "/home/list-students/add",
     exact: true,
     main: () => <AddForm />,
+  },
+  {
+    path: "/home/list-students/add-class",
+    exact: true,
+    main: () => <AddClass />,
   },
   {
     path: "/home/list-students/update/:id",

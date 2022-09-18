@@ -14,6 +14,10 @@ router.patch("/student/update/:id", studentController.updateStudent);
 
 router.post("/student/create", studentController.createStudent);
 
+router.get("/student/class", studentController.getClass);
+
+router.post("/student/create-class", studentController.createClass);
+
 router.delete("/student/delete/:id", studentController.deleteStudent);
 
 //Get 1 student by id
